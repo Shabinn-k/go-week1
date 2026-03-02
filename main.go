@@ -110,29 +110,29 @@
 // 	fmt.Println("Main function")
 // }
 
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-type Shape interface{
-	Area() int
-}
+// type Shape interface{
+// 	Area() int
+// }
 
-type A struct{
-	Width int
-	Height int
-}
+// type A struct{
+// 	Width int
+// 	Height int
+// }
 
-func (a A)Area()int{
-	return a.Width*a.Height
-}
-func hs(s Shape){
-	fmt.Println(s.Area())
-}	
-func main() {
-	d:=A{Width: 10,Height: 100}
-	hs(d)
-}
+// func (a A)Area()int{
+// 	return a.Width*a.Height
+// }
+// func hs(s Shape){
+// 	fmt.Println(s.Area())
+// }
+// func main() {
+// 	d:=A{Width: 10,Height: 100}
+// 	hs(d)
+// }
 
 // package main
 
@@ -247,3 +247,63 @@ func main() {
 // 	}
 // 	fmt.Println(duplicate)
 // }
+
+// package main
+// import "fmt"
+// func main() {
+// 		s:=[]int{1,2,4,5,6}
+// 		i:=2
+// 		v:=3
+// 		s=append(s[:i],append([]int{v},s[i:]...)...)
+// 		s=append(s[:4],s[6:]...)
+// 		fmt.Println(s)
+// }
+
+// package main
+// import "fmt"
+// func main() {
+// 	var a int
+// 	var b int
+// 	var op string
+// 	fmt.Println("enter 2 number")
+// 	fmt.Scan(&a,&b)
+// 	fmt.Println("enter a sign")
+// 	fmt.Scan(&op)
+// 	switch op{
+// 	case "+":fmt.Println(a+b)
+// 	case "*":fmt.Println(a*b)
+// 	default:fmt.Println("over")
+// 	}
+// }
+
+// package main
+// import "fmt"
+// type Student struct{
+// 	Name string
+// }
+// func (s Student)Trial() {
+// 	fmt.Println(s.Name)
+// }
+// func main(){
+// 	n:=Student{
+// 		Name: "shabin",
+// 	}
+// 	n.Trial()
+// }
+
+package main
+
+import (
+	"fmt"
+	 "golang/Practice" 
+)
+func main() { 
+	m:=map [int]string{
+		1:"shabin",
+	}
+	v,ok:=m[2]
+	if ok{fmt.Println(v)}else{fmt.Println("not found")}
+	num:=shabin.Add(10,20)
+	fmt.Println(num)
+
+}

@@ -34,21 +34,21 @@
 // }
 
 //find larget number
-// package main
-// import "fmt"
-// func main() {
-// 	arr:= []int{10, 20, 4, 45, 99}
-// 	max:=0
-// 	min:=0
-// 	for i:=0;i<len(arr);i++{
-// 		if arr[i]>max{
-// 		max=arr[i]
-// 		}else{
-// 			min=arr[i]
-// 		}
-// 	}
-// 	fmt.Println(max,"-",min)
-// }
+package main
+import "fmt"
+func main() {
+	arr:= []int{10, 20, 4, 45, 99}
+	max:=0
+	min:=0
+	for i:=0;i<len(arr);i++{
+		if arr[i]>max{
+			max=arr[i]
+		}else{
+			min=arr[i]
+		}
+	}
+	fmt.Println(max,"-",min)
+}
 
 //Check Palindrome
 // package main
@@ -80,16 +80,16 @@
 // 	for _,val:=range arr{
 // 		m[val]++
 // 		if m[val]==1{
-// 			plane = append(plane, val)
+// 			plane=append(plane, val)
+// 		}
 // 	}
-// }
-// 	dupe:=[]int{}
 // 	og:=[]int{}
+// 	dupe:=[]int{}
 // 	for k,c:=range m{
 // 		if c>1{
-// 			dupe=append(dupe, k)
+// 			dupe = append(dupe, k)
 // 		}else{
-// 			og=append(og, k)
+// 			og = append(og, k)
 // 		}
 // 	}
 // 	fmt.Println("Array ",arr)
@@ -107,39 +107,102 @@
 // func main() {
 // 	str := `then I asked him with my eyes to ask again yes and then he
 // 	        asked me would I yes to say yes my mountain flower and first
-// 	        I put my arms around him yes and drew him down to me so he 
+// 	        I put my arms around him yes and drew him down to me so he
 // 	        could feel my breasts all perfume yes and his heart was
 // 	        going like mad and yes I said yes I will Yes`
 // 	words:=strings.Fields(str)
 // 	m:=make(map[string]int)
-// 	for _,val:=range words{
-// 		m[val]++
+// 	for _,v:=range words{
+// 		m[v]++
 // 	}
 // 	fmt.Println(m)
 // }
 
-//
-package main
-import "fmt"
-type Student struct{
-	Name string
-	Score []int
-}
-func(s Student)Average()float64{
-	if len(s.Score)==0{
-		return 0
-	}
-	sum:=0
-	for n:=range s.Score{
-		sum+=n
-	}
-	return float64(sum)/float64(len(s.Score))
-}
-func main() {
-	st:=Student{
-		Name: "shabin",
-		Score:[]int{10,20,30,40,50,60,80},
-	}
-	fmt.Println("Student",st.Name)
-	fmt.Println(st.Average())
-}
+//average using struct
+// package main
+// import "fmt"
+// type Student struct{
+// 	Name string
+// 	Score []int
+// }
+// func (s Student)Grade()float64{
+// 	if len(s.Score)==0{
+// 		return 0
+// 	}
+// 	sum:=0
+// 	for _,val:=range s.Score{
+// 		sum+=val
+// 	}
+// 	return float64(sum)/float64(len(s.Score))
+// }
+// func main() {
+// 	st:=Student{
+// 		Name: "Shabin",
+// 		Score: []int{10,20,30,40,50},
+// 	}
+// 	fmt.Println(st.Name)
+// 	fmt.Println(st.Grade())
+// }
+
+//pointer
+// package main
+// import "fmt"
+// func trial(n *int) {
+// 	*n= *n+*n
+// }
+// func update(x **int) {
+//     n := 100
+// 	*x=&n
+// }
+// func main() {
+// 	num:=20
+// 	ptr:=&num
+// 	update(&ptr)
+// 	fmt.Println(*ptr)
+// }
+
+// package main
+// import (
+// 	"fmt"
+// 	"net/http"
+// 	"io"
+// )	
+// func main() {
+// 	resp,err:=http.Get("https://jsonplaceholder.typicode.com/posts/1")
+// 	if err!=nil{
+// 		fmt.Println("Error",err)
+// 		return
+// 	}
+// 	defer resp.Body.Close()
+// 	body,err:=io.ReadAll(resp.Body)
+// 	if err!=nil{
+// 		fmt.Println("err")
+// 		return
+// 	}
+// 	fmt.Println(string(body))
+// }
+ 
+// package main
+// import (
+// 	"fmt"
+// 	"sync"
+// )
+// var count int
+// var mu sync.Mutex
+// func trial(wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	for i:=0;i<1000;i++{
+// 		mu.Lock()
+// 		count++
+// 		mu.Unlock()
+// 	}
+// }
+// func main() {
+// 	var wg sync.WaitGroup
+// 	for i:=0;i<5;i++{
+// 		wg.Add(1)
+// 		go trial(&wg)
+// 	}
+// 	wg.Wait()
+// 	fmt.Println(count)
+// }	

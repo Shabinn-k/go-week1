@@ -131,7 +131,6 @@
 // store a string's index and char in a map
 // package main
 // import "fmt"
-// import "fmt"
 // func main() {
 // 	str:="Hello World"
 // 	m:=make(map[int]string)
@@ -163,20 +162,19 @@
 // )
 // func check(n int)error{
 // 	if n%2 !=0{
-// 		return errors.New("It is odd number !")
+// 		return errors.New("it is odd number")
 // 	}
 // 	return nil
 // }
 // func main() {
 // 	var num int
-// 	fmt.Println("Enter a number")
+// 	fmt.Println("enter a number")
 // 	fmt.Scan(&num)
-
 // 	err:=check(num)
 // 	if err!=nil{
-// 		fmt.Println(err)``
+// 		fmt.Println(err)
 // 	}else{
-// 		fmt.Println("It is Even number !")
+// 		fmt.Println("it is even number")
 // 	}
 // }
 
@@ -186,10 +184,10 @@
 // func risk(){
 // 	defer func(){
 // 		if r:=recover();r!=nil{
-// 			fmt.Println("recovered from",r)
+// 			fmt.Println("recovered from panic",r)
 // 		}
 // 	}()
-// 	panic("Panic occured")
+// 	panic("panic occured")
 // }
 // func main() {
 // 	risk()
@@ -197,35 +195,31 @@
 
 // interface
 // package main
-
 // import "fmt"
 // type Shape interface{
+// 	Circle()	int
 // 	Rectangle() int
-// 	Circle() float64
-// 	Square() int
 // }
 // type Area struct{
+// 	Length int
 // 	Width int
-// 	Height int
-// 	Radius float64
+// }
+// func (a Area)Circle()int{
+// 	return 2*3*a.Length
 // }
 // func (a Area)Rectangle()int{
-// 	return a.Height*a.Width
+// 	return a.Length*a.Width
 // }
-// func (a Area)Circle()float64{
-// 	return 2*3.149890*a.Radius
-// }
-// func (a Area)Square()int{
-// 	return a.Width*a.Width
-// }
-// func Get(s Shape){
+// func Trial(s Shape){
+// 	fmt.Println("area of circle",s.Circle())
 // 	fmt.Println(s.Rectangle())
-// 	fmt.Println(s.Circle())
-// 	fmt.Println(s.Square())
 // }
-// func main() {
-// 	size:=Area{Width:10 ,Height:25, Radius:4.5 }
-// 	Get(size)
+// func  main(){
+// 	aa:=Area{
+// 		Width: 90,
+// 		Length: 10,
+// 	}
+// 	Trial(aa)
 // }
 
 // largest number
@@ -245,21 +239,37 @@
 // remove duplicates form an array
 // package main
 // import "fmt"
-// func main() {
-// 	arr:=[]int{1,2,2,3,1,43,5,23,23,6,10,9,9,3,87,52}
-// 	m:=make(map[int]int)
-// 	dup:=[]int{}
-// 	for _,n:=range arr{
-// 		m[n]++
-// 		if m[n]==2{
-// 			dup=append(dup,n)
-// 		}
+//
+//	func main() {
+//		arr:=[]int{1,2,2,3,1,43,5,23,23,6,10,9,9,3,87,52}
+//		m:=make(map[int]int)
+//		dup:=[]int{}
+//		for _,n:=range arr{
+//			m[n]++
+//			if m[n]==2{
+//				dup=append(dup,n)
+//			}
+//		}
+//		fmt.Println(dup)
+//	}
+
+// package main
+// import "fmt"
+// func numbers(ch chan int){
+// 	for i:=1;i<=10;i++{
+// 		ch<-i
 // 	}
-// 	fmt.Println(dup)
+// 	close(ch)
+// }
+// func main() {
+// 	ch:=make(chan int)
+// 	go numbers(ch)
+// 	for n:=range ch{
+// 		fmt.Println(n)
+// 	}
 // }
 
-package main
-
-func main() {
-	
+package shabin
+func Add(a,b int)int{
+	return a+b
 }
