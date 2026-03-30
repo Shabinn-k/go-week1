@@ -15,40 +15,40 @@
 // }
 
 //Count Vowels
-// package main
-// import "fmt"
-// func main() {
-// 	str:="hello world"
-// 	v:=0
-// 	c:=0
-// 	for i:=0;i<len(str);i++{
-// 		ch:=str[i]
-// 		if ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'{
-// 			v++
-// 		}else{
-// 			c++
-// 		}
-// 	}
-// 	fmt.Println("vowels -",v)
-// 	fmt.Println("Consonants -",c)
-// }
-
-//find larget number
 package main
 import "fmt"
 func main() {
-	arr:= []int{10, 20, 4, 45, 99}
-	max:=0
-	min:=0
-	for i:=0;i<len(arr);i++{
-		if arr[i]>max{
-			max=arr[i]
+	str:="hello world"
+	v:=0
+	c:=0
+	for i:=0;i<len(str);i++{
+		ch:=str[i]
+		if ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'{
+			v++
 		}else{
-			min=arr[i]
+			c++
 		}
 	}
-	fmt.Println(max,"-",min)
+	fmt.Println("vowels -",v)
+	fmt.Println("Consonants -",c)
 }
+
+//find larget number
+// package main
+// import "fmt"
+// func main() {
+// 	arr:= []int{10, 20, 4, 45, 99}
+// 	max:=0
+// 	min:=0
+// 	for i:=0;i<len(arr);i++{
+// 		if arr[i]>max{
+// 			max=arr[i]
+// 		}else{
+// 			min=arr[i]
+// 		}
+// 	}
+// 	fmt.Println(max,"-",min)
+// }
 
 //Check Palindrome
 // package main
@@ -166,7 +166,7 @@ func main() {
 // 	"fmt"
 // 	"net/http"
 // 	"io"
-// )	
+// )
 // func main() {
 // 	resp,err:=http.Get("https://jsonplaceholder.typicode.com/posts/1")
 // 	if err!=nil{
@@ -181,28 +181,32 @@ func main() {
 // 	}
 // 	fmt.Println(string(body))
 // }
- 
+
 // package main
 // import (
-// 	"fmt"
-// 	"sync"
+//
+//	"fmt"
+//	"sync"
+//
 // )
 // var count int
 // var mu sync.Mutex
-// func trial(wg *sync.WaitGroup){
-// 	defer wg.Done()
-// 	for i:=0;i<1000;i++{
-// 		mu.Lock()
-// 		count++
-// 		mu.Unlock()
-// 	}
-// }
-// func main() {
-// 	var wg sync.WaitGroup
-// 	for i:=0;i<5;i++{
-// 		wg.Add(1)
-// 		go trial(&wg)
-// 	}
-// 	wg.Wait()
-// 	fmt.Println(count)
-// }	
+//
+//	func trial(wg *sync.WaitGroup){
+//		defer wg.Done()
+//		for i:=0;i<1000;i++{
+//			mu.Lock()
+//			count++
+//			mu.Unlock()
+//		}
+//	}
+//
+//	func main() {
+//		var wg sync.WaitGroup
+//		for i:=0;i<5;i++{
+//			wg.Add(1)
+//			go trial(&wg)
+//		}
+//		wg.Wait()
+//		fmt.Println(count)
+//	}

@@ -291,19 +291,28 @@
 // 	n.Trial()
 // }
 
+// package main
+
+// import (
+// 	"fmt"
+// 	 "golang/Practice" 
+// )
+// func main() { 
+// 	m:=map [int]string{
+// 		1:"shabin",
+// 	}
+// 	v,ok:=m[2]
+// 	if ok{fmt.Println(v)}else{fmt.Println("not found")}
+// 	num:=shabin.Add(10,20)
+// 	fmt.Println(num)
+
+// }
+
 package main
-
-import (
-	"fmt"
-	 "golang/Practice" 
-)
-func main() { 
-	m:=map [int]string{
-		1:"shabin",
-	}
-	v,ok:=m[2]
-	if ok{fmt.Println(v)}else{fmt.Println("not found")}
-	num:=shabin.Add(10,20)
-	fmt.Println(num)
-
+import f "fmt"
+func main() {
+	x:=10
+	p:=&x
+	*p=40
+	f.Println(x)
 }
