@@ -8,9 +8,9 @@ func main() {
 	students["john"] = 51
 	students["rahul"] = 11
 
-	fmt.Println("Shabin Grade",students["shabin"])
+	fmt.Println("Shabin Grade", students["shabin"])
 
-	for name,grade:=range students{
-		fmt.Println(name,": ",grade)
+	for name, grade := range students {
+		fmt.Println(name, ": ", grade)
 	}
 }

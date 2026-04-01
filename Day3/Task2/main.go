@@ -1,11 +1,11 @@
 package main
-import "fmt"
 
+import "fmt"
 
 func RemoveDuplicate(nums []int) []int {
 	unique := []int{}
 	seen := make(map[int]bool)
-	
+
 	for _, value := range nums {
 		if !seen[value] {
 			seen[value] = true

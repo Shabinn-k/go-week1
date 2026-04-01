@@ -15,7 +15,7 @@ func maxMin(arr [5]int) (int, int) {
 		}
 	}
 	return max, min
-	
+
 }
 func main() {
 	arr := [5]int{23, 13, 1, 532, 65}
